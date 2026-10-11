@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="LifeLine">
+  <defs>
+    <linearGradient id="favDrop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0344f"/>
+      <stop offset="100%" stop-color="#8f0b20"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#ffffff"/>
+  <path fill="url(#favDrop)" d="M32 6C32 6 12 26.5 12 39.5C12 49.8 21 57.5 32 57.5S52 49.8 52 39.5C52 26.5 32 6 32 6z"/>
+  <path fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+        d="M16 39h7l3.5-8 5.5 16 4.5-10 2.5 2H48"/>
+</svg>

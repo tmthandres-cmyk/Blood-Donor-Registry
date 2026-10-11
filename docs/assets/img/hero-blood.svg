@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" width="520" height="480"
+     role="img" aria-label="A blood donation bag filled with donated blood, a heartbeat heart, and floating blood group badges">
+  <defs>
+    <linearGradient id="bgBlob" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fdeaed"/>
+      <stop offset="100%" stop-color="#f8d7dd"/>
+    </linearGradient>
+    <linearGradient id="bloodFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0344f"/>
+      <stop offset="100%" stop-color="#8f0b20"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f6c9a8"/>
+      <stop offset="100%" stop-color="#e0a67e"/>
+    </linearGradient>
+    <linearGradient id="heartG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0344f"/>
+      <stop offset="100%" stop-color="#a81228"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="260" cy="240" r="205" fill="url(#bgBlob)"/>
+  <circle cx="260" cy="240" r="205" fill="none" stroke="#f3c9d1" stroke-width="2" stroke-dasharray="6 10"/>
+
+  <!-- Decorative drops -->
+  <g opacity="0.5" fill="#e0344f">
+    <path d="M88 120c0 0-14 15-14 24a14 14 0 0 0 28 0c0-9-14-24-14-24z"/>
+    <path d="M446 332c0 0-10 11-10 18a10 10 0 0 0 20 0c0-7-10-18-10-18z" opacity="0.7"/>
+  </g>
+
+  <!-- Hanging hook -->
+  <path d="M262 66v26" stroke="#c8102e" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M236 92h52" stroke="#c8102e" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- Donor arm (upper left) with tourniquet -->
+  <g>
+    <path d="M60 188c0-16 13-29 29-29h96c16 0 29 13 29 29v44c0 16-13 29-29 29h-96c-16 0-29-13-29-29z"
+          fill="url(#skin)"/>
+    <rect x="150" y="152" width="18" height="78" rx="9" fill="#a81228"/>
+    <!-- needle into the arm -->
+    <path d="M168 191h46" stroke="#9ca3af" stroke-width="5" stroke-linecap="round"/>
+    <path d="M168 191l-10-9" stroke="#6b7280" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- blood flowing into the tube -->
+    <path d="M214 191h44" stroke="#e0344f" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- Collection bag -->
+  <g>
+    <rect x="252" y="126" width="148" height="206" rx="22" fill="#ffffff" stroke="#d7dbe0" stroke-width="3"/>
+    <!-- bag contents -->
+    <clipPath id="bagClip"><rect x="252" y="126" width="148" height="206" rx="22"/></clipPath>
+    <g clip-path="url(#bagClip)">
+      <rect x="252" y="204" width="148" height="128" fill="url(#bloodFill)"/>
+      <ellipse cx="326" cy="204" rx="74" ry="11" fill="#f07a8e"/>
+    </g>
+    <!-- label plate -->
+    <rect x="274" y="146" width="104" height="42" rx="9" fill="#ffffff" stroke="#d7dbe0" stroke-width="2.5"/>
+    <text x="326" y="163" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700"
+          fill="#8f0b20" text-anchor="middle">BLOOD DONOR</text>
+    <line x1="286" y1="170" x2="366" y2="170" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+    <line x1="286" y1="178" x2="350" y2="178" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+    <!-- measurement ticks -->
+    <g stroke="#c9ced6" stroke-width="3" stroke-linecap="round">
+      <line x1="378" y1="222" x2="392" y2="222"/>
+      <line x1="381" y1="248" x2="392" y2="248"/>
+      <line x1="378" y1="274" x2="392" y2="274"/>
+      <line x1="381" y1="300" x2="392" y2="300"/>
+    </g>
+    <!-- port and tube -->
+    <rect x="312" y="332" width="28" height="16" rx="5" fill="#d7dbe0"/>
+    <path d="M326 348v34c0 16-13 29-29 29h-18" stroke="#c9ced6" stroke-width="7"
+          stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Heart with pulse -->
+  <g transform="translate(398 86)">
+    <path fill="url(#heartG)" d="M32 60C32 60 0 38 0 19.5 0 8.7 8.7 0 19.5 0 26 0 30.5 4 32 8c1.5-4 6-8 12.5-8C55.3 0 64 8.7 64 19.5 64 38 32 60 32 60z"/>
+    <path fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"
+          d="M9 28h9l4-9 6 17 5-11 3 3h10"/>
+  </g>
+
+  <!-- Floating blood group badges -->
+  <g font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="17" fill="#ffffff" text-anchor="middle">
+    <rect x="54" y="318" width="52" height="36" rx="9" fill="#b42318"/>
+    <text x="80" y="342">O-</text>
+
+    <rect x="404" y="212" width="54" height="36" rx="9" fill="#15803d"/>
+    <text x="431" y="236">A+</text>
+
+    <rect x="118" y="392" width="56" height="36" rx="9" fill="#4338ca"/>
+    <text x="146" y="416">B+</text>
+  </g>
+
+  <!-- Ground shadow -->
+  <ellipse cx="300" cy="452" rx="150" ry="14" fill="#8f0b20" opacity="0.08"/>
+</svg>

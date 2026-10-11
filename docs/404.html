@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found - LifeLine Blood Donor Registry</title>
+<meta name="robots" content="noindex">
+<style>
+  /* Fully inlined on purpose: this page is served for ANY missing path, so it
+     must never depend on a relative asset resolving correctly. */
+  body { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+         background: #f9fafb; color: #374151; margin: 0; }
+  main { max-width: 640px; margin: 0 auto; padding: 72px 20px; text-align: center; }
+  .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 40px 32px;
+          box-shadow: 0 1px 2px rgba(16,21,28,.06); }
+  .brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px;
+           font-weight: 700; color: #101828; text-decoration: none; font-size: 1rem; }
+  .brand img { width: 40px; height: 40px; }
+  .code { font-size: 4rem; font-weight: 800; color: #f08a97; line-height: 1; margin: 0 0 8px; }
+  h1 { color: #101828; font-size: 1.6rem; margin: 0 0 12px; }
+  p { color: #4b5563; margin: 0 0 12px; line-height: 1.6; }
+  code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: .9em; }
+  a.btn { display: inline-block; background: #a81228; color: #fff; text-decoration: none;
+          padding: 12px 24px; border-radius: 10px; font-weight: 600; margin: 8px 6px 0; }
+  a.btn.ghost { background: #fff; color: #8f0b20; border: 1px solid #f08a97; }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <a class="brand" href="#" data-home>
+      <img alt="" width="40" height="40"
+           src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNmZjZhZmYiLz48cGF0aCBmaWxsPSIjYzEwMjJlIiBkPSJNMCAzYzYtMzkuNSAyMy41IDM5LjVMMyA2MiA2MGMwMGMwMCAyMyAyMyAyMy4yIDEyIDQzLjItNCA1NiA2MGMwMCB2Ii8+PHBhdGggZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjE2IiBkPSJNMTkgMjRjMTdjLjktOC4zIDE1IDYuNSAxMi44IDIyLjUgNy45LTIwIDQyIDE3IDI3LjggMTYuNSAyNy44IDEyLjUgMjguMiA0MiAyNSAyOS41IDQ4LjUgNjQuNSA1MCA3MyA4Ny4zIDI3LjUgMzguNSAzOS42IDM3LjUgMTAgNDguNSA4LjcgNTUgNTkuNSA3OCA1OC44IDgyIDMwIDcyIDM5IDc5IDc5LjcgMTAgMTE4IDExNiAxMjMuNSAxMjQuNSAxMzIuNSAxMzguNSAxNDIuNCAxNDUgMTQ2LjMgMTQ3LjYgMTQ3IDQ2LjkgMTQ2LjUgNzguNiAxMTMuNiAxMjUuNiAxMzUuNSAxMzUuNSAxMjkuNCAxMjkuNCAxNDQuNSAxNDQuNCAxNTkuNiAxNjkuNiAxNzQuNiAxNzQuNiAxNzguNCAxNzguNCAxODMuNiAxODMuNiAxOTMuNiAxOTMuNiA5LjkgMjE4IDM1IDM4LjMgMzkuNiA0MTEgNDMwLjEgNDQwLjEgNDUwLjQgNTE1LjUgNTQ1LjMgNTcyLjMgNTcyLjMgNTc4IDU3OS4xIDU4Ni4xIDU5Mi4yIDU5NS4yIDU5Ny44IDYwOC4xIDYxNS4yIDYyMi4yIDYyMi4yIDY0OS4yIDY4Ni4yIDcyMS42IDcyMS42IDcyMS4yIDcyMy4xIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik0xMCA0MGgyMmx2MTZtMTZsMTZ2M2wtMTYgMTZzMTYgMTYtOSAzIDEwbDktOSAyNS0xNCA1My01bC02bC0xMCIvPjwvc3ZnPg==">
+      <span>LifeLine Blood Donor Registry</span>
+    </a>
+
+    <p class="code" aria-hidden="true">404</p>
+    <h1>We could not find that page</h1>
+    <p>This site uses address-bar routes that start with <code>#/</code>, for example
+       <code>index.html#/donors</code>. If you followed a link, it may be out of date.</p>
+    <p>Taking you back to the registry&hellip;</p>
+
+    <a class="btn" href="#" data-home>Go to the registry</a>
+  </div>
+</main>
+
+<script>
+  // GitHub Pages serves this page for any missing path, so the URL the visitor
+  // sees is the one they asked for - not the folder holding 404.html. The app
+  // root therefore has to be discovered rather than assumed, because a project
+  // repo lives at /repo/ while a user site lives at /.
+  (function () {
+    var segments = location.pathname.split('/').filter(Boolean);
+
+    function tryBase(index) {
+      if (index < 0) {
+        // Nothing resolved; fall back to the root of the host.
+        location.replace('/');
+        return;
+      }
+      var candidate = '/' + segments.slice(0, index).join('/') + '/';
+      // Try the deepest candidate first: a missing file under the repo folder
+      // should resolve to that same folder.
+      fetch(candidate + 'index.html', { method: 'HEAD', cache: 'no-store' })
+        .then(function (res) {
+          if (res.ok) location.replace(candidate + '#/');
+          else tryBase(index - 1);
+        })
+        .catch(function () { tryBase(index - 1); });
+    }
+
+    var links = document.querySelectorAll('[data-home]');
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', function (e) { e.preventDefault(); tryBase(segments.length); });
+    }
+
+    // Send them into the app straight away.
+    setTimeout(function () { tryBase(segments.length); }, 350);
+  })();
+</script>
+</body>
+</html>

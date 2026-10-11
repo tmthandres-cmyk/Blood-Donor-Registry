@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test runner - LifeLine Blood Donor Registry</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html">
+      <img class="brand-mark" src="../assets/img/logo.svg" width="44" height="44" alt="">
+      <span class="brand-text">
+        <strong>LifeLine Blood Donor Registry</strong>
+        <small>Test runner</small>
+      </span>
+    </a>
+    <a class="btn btn-ghost btn-sm" href="../index.html">Back to the app</a>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container section">
+    <div class="page-intro">
+      <p class="page-eyebrow">Automated checks</p>
+      <h1 class="page-title">Test runner</h1>
+      <p class="page-sub">Loads the real application in this page, then runs the behavioural
+        test suite against it. The app is seeded into this page only - nothing in your
+        normal browser data is touched.</p>
+      <div class="page-actions">
+        <button class="btn btn-primary" type="button" id="runBtn">Run the tests</button>
+      </div>
+    </div>
+
+    <section class="card">
+      <div class="card-head">
+        <h2 class="card-title">Results</h2>
+        <span class="card-count" id="status">Not run yet</span>
+      </div>
+      <pre class="data-output" id="out" style="min-height:320px">Press "Run the tests" to begin.</pre>
+    </section>
+  </div>
+</main>
+
+<!-- The application itself, loaded off-screen so the tests exercise real code. -->
+<div id="appHost" style="position:absolute;left:-9999px;top:0;width:1200px;"></div>
+
+<script>
+// Load the application into a detached host so the tests run against genuine
+// modules without disturbing this page's own markup.
+(async function boot() {
+  const files = [
+    '../assets/js/crypto.js',
+    '../assets/js/store.js',
+    '../assets/js/eligibility.js',
+    '../assets/js/validate.js',
+    '../assets/js/auth.js',
+    '../assets/js/ui.js',
+    '../assets/js/layout.js',
+    '../assets/js/views/errors.js',
+    '../assets/js/views/landing.js',
+    '../assets/js/views/auth.js',
+    '../assets/js/views/donors.js',
+    '../assets/js/views/donations.js',
+    '../assets/js/views/requests.js',
+    '../assets/js/views/dashboard.js',
+    '../assets/js/views/users.js',
+    '../assets/js/views/data.js',
+    '../assets/js/seed.js',
+    '../assets/js/router.js',
+    '../assets/js/app.js',
+    '__suite.js',
+    '__tests.js'
+  ];
+
+  const out = document.getElementById('out');
+  const status = document.getElementById('status');
+
+  for (const file of files) {
+    const code = await (await fetch(file)).text();
+    try {
+      (0, eval)(code);
+    } catch (error) {
+      out.textContent += '\nFAILED TO LOAD ' + file + '\n  ' + error.message + '\n';
+      status.textContent = 'Load error';
+      return;
+    }
+  }
+
+  await window.App.Seed.run();
+
+  document.getElementById('runBtn').addEventListener('click', function () {
+    const summary = window.runTests();
+    out.textContent = window.Test.print();
+    status.textContent = summary.failed === 0
+      ? summary.passed + ' checks passed'
+      : summary.failed + ' of ' + summary.total + ' failed';
+    out.style.color = summary.failed === 0 ? '#03543b' : '#7a1a13';
+  });
+})();
+</script>
+
+</body>
+</html>

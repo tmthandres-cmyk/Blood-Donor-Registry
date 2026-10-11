@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LifeLine Blood Donor Registry</title>
+<meta name="description" content="Register as a blood donor, keep your donation history and get matched with patients who need your blood type. LifeLine Blood Donor Registry of the St. Michael Blood Center.">
+<meta name="theme-color" content="#8f0b20">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="canonical" href=".">
+</head>
+<body>
+
+<a class="skip-link" href="#view">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- The visible brand text already names this link, so no aria-label here:
+         an aria-label that differs from the visible text confuses screen readers. -->
+    <a class="brand" href="#/">
+      <span id="brandHost" style="display: contents;"></span>
+    </a>
+
+    <button class="nav-toggle" type="button" data-nav-toggle
+            aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle-text">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" data-nav-panel aria-label="Main navigation" hidden></nav>
+  </div>
+</header>
+
+<main id="view" class="main" aria-busy="true"></main>
+
+<!-- flash messages live here so they survive every route change -->
+<div id="flashHost" class="container"></div>
+<div id="toastHost" class="container" style="position:fixed;top:76px;left:0;right:0;z-index:250;pointer-events:none;"></div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img class="brand-mark" src="assets/img/logo.svg" width="52" height="52" alt="">
+      <p class="footer-name">LifeLine Blood Donor Registry</p>
+      <p class="footer-tagline">Operated by the St. Michael Blood Center &middot; City of Antipolo</p>
+      <p class="footer-tagline">A faster way to find a matching donor when every minute counts.</p>
+    </div>
+
+    <div class="footer-col">
+      <h2>Donor services</h2>
+      <ul class="footer-list" id="footerLinks"></ul>
+      <ul class="footer-list">
+        <li><a href="#/#compatibility">Blood type compatibility</a></li>
+        <li><a href="#/#faq">Donation questions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2>Blood center</h2>
+      <ul class="footer-list">
+        <li>St. Michael Blood Center, General Santos Ave, Antipolo City</li>
+        <li>Hotline: +63 917 555 0142</li>
+        <li>donors@stmichaelblood.org</li>
+        <li>Monday - Saturday, 7:00 AM - 7:00 PM</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2>Account</h2>
+      <ul class="footer-list">
+        <li><a href="#/register">Create an account</a></li>
+        <li><a href="#/login">Sign in</a></li>
+        <li><a href="#/requests/new">Post a blood request</a></li>
+        <li><a href="#/data">Manage stored data</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; <span data-year>2026</span> LifeLine Blood Donor Registry. All rights reserved.</p>
+    <p class="footer-privacy">Donor details are visible only to the donor and to authorized blood bank staff.</p>
+  </div>
+</footer>
+
+<!-- confirmation dialog for destructive actions -->
+<div class="modal-backdrop" id="confirmModal" hidden role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+  <div data-modal-backdrop></div>
+  <div class="modal">
+    <h2 class="modal-title" id="confirmTitle" data-modal-title>Please confirm</h2>
+    <p class="modal-text" data-modal-text></p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" type="button" data-modal-cancel>Cancel</button>
+      <button class="btn btn-danger" type="button" data-modal-ok>Yes, delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- shown while a password is being hashed -->
+<div class="busy-overlay" id="busyOverlay" hidden>
+  <div class="spinner" aria-hidden="true"></div>
+  <p>Working&hellip;</p>
+</div>
+
+<!-- Load order matters: crypto -> store -> eligibility -> validate -> auth -> ui -> layout -> views -> seed -> router -> app -->
+<script src="assets/js/crypto.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/eligibility.js"></script>
+<script src="assets/js/validate.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/views/errors.js"></script>
+<script src="assets/js/views/landing.js"></script>
+<script src="assets/js/views/auth.js"></script>
+<script src="assets/js/views/donors.js"></script>
+<script src="assets/js/views/donations.js"></script>
+<script src="assets/js/views/requests.js"></script>
+<script src="assets/js/views/dashboard.js"></script>
+<script src="assets/js/views/users.js"></script>
+<script src="assets/js/views/data.js"></script>
+<script src="assets/js/seed.js"></script>
+<script src="assets/js/router.js"></script>
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
